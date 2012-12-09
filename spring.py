@@ -11,7 +11,6 @@ def both_ends(s):
     print s[:2]+s[-2:]
   else:
     print ''
-  # +++your code here+++
   return
 
 both_ends('Andrew')
