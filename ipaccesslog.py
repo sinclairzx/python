@@ -11,6 +11,9 @@ def search(ip):
   s = re.search(ip,f)
   if s:
     print s.group()
+  else:
+    print 'No match!'
+
 
 def main():
   search([sys.argv[0]])
