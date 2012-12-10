@@ -1,5 +1,7 @@
 #!/usr/bin/python -tt
 
+"""Import data from ipplan and create main.mk config based on input"""
+
 import os
 import re
 
@@ -8,10 +10,6 @@ def pluto_read():
   f = o.read()
   s = re.findall(r'(\w+\.\w+\.\w+\.\w+)\s\S+\s\w+\s\S\s\w+\s\w+\s\w+\s\S\s(\S+)',f)
  
-#Basic print 
-#  for ip,hostname in s:
-#    print '\'' + hostname +'|titan|windows|supermicro\''
-
   for ip, hostname in s:
     if 'ESX' in hostname:
       print '\'' + hostname +'|titan|esx|supermicro\''
@@ -27,6 +25,7 @@ def pluto_read():
       print '\'' + hostname +'|titan\''
   return 
   o.close()
+
 
 
 def main():
